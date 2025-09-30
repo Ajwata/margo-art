@@ -8,7 +8,103 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Floating Contact Button -->
+<div class="contact-fab" id="fab">
+  ✉️
+</div>
+
+<!-- Popup with social links -->
+<div class="contact-popup" id="fabPopup">
+  <a href="https://instagram.com/margo_v_art" target="_blank" aria-label="Instagram">📷</a>
+  <a href="https://t.me/margaritavityaz" target="_blank" aria-label="Telegram">💬</a>
+  <a href="mailto:margaritavityaz@gmail.com" aria-label="Email">✉️</a>
+</div>
+
+<style>
+/* FAB button */
+.contact-fab {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(20,24,40,.25);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.contact-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(10,108,255,.35);
+}
+
+/* Popup container */
+.contact-popup {
+  position: fixed;
+  bottom: 85px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all .25s ease;
+  z-index: 999;
+}
+.contact-popup a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.contact-popup a:hover {
+  transform: scale(1.1);
+}
+
+/* Active state */
+.contact-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+const fab = document.getElementById('fab');
+const popup = document.getElementById('fabPopup');
+
+fab.addEventListener('click', () => {
+  popup.classList.toggle('show');
+});
+
+// Закрытие при клике вне
+document.addEventListener('click', (e) => {
+  if (!fab.contains(e.target) && !popup.contains(e.target)) {
+    popup.classList.remove('show');
+  }
+});
+</script>
+
   <style>
+
+    html {
+  scroll-behavior: smooth;
+}
     :root{
       --bg:#fafafa;
       --card:#ffffff;
@@ -519,5 +615,6 @@ body {
   // Accessibility: close on click outside
   dlg.addEventListener('click', (e)=>{const r = dlg.getBoundingClientRect(); if(e.clientY < r.top || e.clientY > r.bottom || e.clientX < r.left || e.clientX > r.right) close();});
   </script>
+  
 </body>
 </html>
