@@ -288,7 +288,20 @@ body {
     background-position: 30% 10%, 60% 50%, 100% 80%, 20% 60%, 0 0, 0 0;
   }
 }
+@media (max-width: 768px){
+  .hero-media{
+    background-position: left center !important;   /* фокусируемся на левой части */
+    /* если нужно ещё левее — используй число: */
+    /* background-position: 10% 50% !important; */
+  }
+}
 
+/* доп. вариант для очень узких экранов */
+@media (max-width: 420px){
+  .hero-media{
+    background-position: 5% 50% !important; /* ещё чуть левее */
+  }
+}
   </style>
   
 </head>
