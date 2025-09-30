@@ -288,20 +288,35 @@ body {
     background-position: 30% 10%, 60% 50%, 100% 80%, 20% 60%, 0 0, 0 0;
   }
 }
+/* Разделение фото и заголовка на мобилке */
 @media (max-width: 768px){
-  .hero-media{
-    background-position: left center !important;   /* фокусируемся на левой части */
-    /* если нужно ещё левее — используй число: */
-    /* background-position: 10% 50% !important; */
+  .hero-media {
+    display: block;              /* перестаем центрировать */
+    height: auto;                /* убираем фиксированную высоту */
+    min-height: unset;
+    background: none !important; /* убираем фон */
+  }
+
+  .hero-inner {
+    position: relative;
+    padding: 0;
+  }
+
+  /* картинка отдельно */
+  .hero-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* карточка уходит вниз под фото */
+  .hero-card {
+    position: relative;
+    margin: 16px auto;
+    max-width: 95%;
   }
 }
 
-/* доп. вариант для очень узких экранов */
-@media (max-width: 420px){
-  .hero-media{
-    background-position: 5% 50% !important; /* ещё чуть левее */
-  }
-}
   </style>
   
 </head>
@@ -318,21 +333,22 @@ body {
   </header>
 
   <!-- HERO -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero-media" id="heroMedia" role="img" aria-label="Artist with painting">
-      <div class="hero-overlay"></div>
-      <div class="hero-inner">
-        <div class="hero-card">
-          <h1>Contemporary Art by <span style="white-space:nowrap">Margarita Vityaz</span></h1>
-          <p>Abstract, symbolic and figurative paintings. Unique works on canvas with acrylic and gold leaf.</p>
-          <div class="hero-ctas">
-            <a class="btn" href="#gallery">Explore Gallery</a>
-            <a class="btn ghost" href="#contact">Contact the Artist</a>
-          </div>
+<section class="hero" aria-label="Hero">
+  <div class="hero-media" id="heroMedia">
+    <img src="img/Im.jpg" alt="Artist with painting" class="hero-img" />
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1>Contemporary Art by <span style="white-space:nowrap">Margarita Vityaz</span></h1>
+        <p>Abstract, symbolic and figurative paintings. Unique works on canvas with acrylic and gold leaf.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#gallery">Explore Gallery</a>
+          <a class="btn ghost" href="#contact">Contact the Artist</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- GALLERY -->
   <section id="gallery" aria-labelledby="galleryTitle">
