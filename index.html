@@ -189,7 +189,7 @@ document.addEventListener('click', (e) => {
     .hero-overlay{
       position:absolute; inset:0;
       background:radial-gradient(80% 70% at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.35) 60%, rgba(255,255,255,.15));
-      mix-blend:lighten
+      mix-blend:lighten;
     }
     .hero-inner{position:absolute; inset:0; display:grid; place-items:center; padding:24px}
     .hero-card{
@@ -263,16 +263,8 @@ document.addEventListener('click', (e) => {
 }
   /* Художественный фон "мазки краски" */
 body {
-  background-color: #fafafa;
-  background-image:
-    /* мазки */
-    linear-gradient(120deg, rgba(255, 100, 100, 0.15) 20%, transparent 20%),
-    linear-gradient(200deg, rgba(100, 150, 255, 0.15) 25%, transparent 25%),
-    linear-gradient(60deg, rgba(120, 255, 180, 0.15) 15%, transparent 15%),
-    linear-gradient(300deg, rgba(255, 220, 120, 0.15) 30%, transparent 30%),
-    /* текстура холста */
-    repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px),
-    repeating-linear-gradient(-45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 4px);
+  background-color: #fcf6f6;
+
   background-blend-mode: multiply, multiply, multiply, multiply, normal, normal;
   background-size: cover, cover, cover, cover, 8px 8px, 8px 8px;
   background-attachment: fixed;
@@ -332,14 +324,13 @@ body {
     </nav>
   </header>
 
-  <!-- HERO -->
 <section class="hero" aria-label="Hero">
   <div class="hero-media" id="heroMedia">
     <img src="img/Im.jpg" alt="Artist with painting" class="hero-img" />
     <div class="hero-inner">
       <div class="hero-card">
-        <h1>Contemporary Art by <span style="white-space:nowrap">Margarita Vityaz</span></h1>
-        <p>Abstract, symbolic and figurative paintings. Unique works on canvas with acrylic and gold leaf.</p>
+        <h1 style="color:#333333;">Margarita Vityaz | Ukrainian Abstract Artist</h1>
+        <p style="color:#333333; font-size:18px;">Energetic abstract art that inspires and uplifts</p>
         <div class="hero-ctas">
           <a class="btn" href="#gallery">Explore Gallery</a>
           <a class="btn ghost" href="#contact">Contact the Artist</a>
@@ -365,24 +356,51 @@ body {
     <div class="grid" id="grid" aria-live="polite"></div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" aria-labelledby="aboutTitle">
-    <h2 id="aboutTitle">About the Artist</h2>
-    <div class="about">
-      <div class="panel">
-        <p>M. Vinyaz is a contemporary artist working with vibrant acrylics, gold leaf, and expressive textures. Her works combine abstraction, symbolism, and figurative narration, exploring themes of love, inner vision, and cosmology.</p>
-        <p>Each painting is created on premium canvas and sealed with a protective varnish. The artist presents both small cityscapes and large statement pieces suitable for modern interiors and galleries.</p>
-      </div>
-      <div class="panel">
-        <strong>Commissions & Exhibitions</strong>
-        <ul>
-          <li>Custom size and palette available on request</li>
-          <li>Worldwide shipping with certificate of authenticity</li>
-          <li>Open to gallery collaborations and shows</li>
+  <h2 id="aboutTitle">About the Artist</h2>
+  <div class="about">
+    <div class="panel">
+      <img src="img/Im.jpg" alt="Margarita Vityaz portrait" class="about-portrait" loading="lazy"/>
+
+      <p style="color:#333333;">
+        I live in Ukraine and hold a degree as a certified composer. Painting has always been my true passion and the calling of my life. I have been working professionally in fine art for more than 20 years, and for the past decade I have been dedicated to abstract painting.
+      </p>
+      <p style="color:#333333;">
+        My works are distinguished by vibrant, dynamic energy and bold color combinations, often enhanced with gold leaf. Collectors and clients often share that my art, with its joyful vitality, helps them overcome feelings of melancholy and even lifts them out of depression.
+      </p>
+      <p style="color:#333333;">
+        I believe that art should bring beauty and strength, inspire a zest for life, and provide deep visual pleasure. Through my paintings, I strive to share this energy with people all over the world.
+      </p>
+    </div>
+
+    <div class="panel">
+      <strong style="font-size:20px; color:#333333;">Exhibitions & Symposiums</strong>
+      <div class="timeline" style="margin-top:14px; color:#333333;">
+        <ul style="list-style:none; padding-left:0; line-height:1.7;">
+          <li><b>2017</b> — International Art Symposium, Lenchna, Poland</li>
+          <li><b>2017, 2019</b> — International Art Symposium, Barlinek, Poland</li>
+          <li><b>2018</b> — Art Symposium, Shayan, Ukraine</li>
+          <li><b>2018</b> — International Art Symposium, Sofia, Bulgaria</li>
+        </ul>
+        <hr style="border:0; border-top:1px solid #ddd; margin:20px 0;">
+        <h4 style="margin:0 0 10px; font-family:'Playfair Display',serif; color:#333333;">Participation in Exhibitions</h4>
+        <ul style="list-style:none; padding-left:0; line-height:1.7;">
+          <li><b>2015</b> — “Alternatives-33”, Poland</li>
+          <li><b>2016–2017</b> — “The Epoch of Masters”, Poland–Ukraine</li>
+          <li><b>2017</b> — “Autumn”, Białystok, Poland</li>
+          <li><b>2017</b> — “Winter”, Białystok, Poland</li>
+          <li><b>2017</b> — “Hidden Beauty — Barlinek 2017”, Poland</li>
+          <li><b>2018</b> — “Price of Freedom”, Białystok, Poland</li>
+          <li><b>2018</b> — “City on Easel”, Horishni Plavni, Ukraine</li>
+          <li><b>2019</b> — “Art Tartak”, Lviv, Ukraine</li>
+          <li><b>2019</b> — “Awakening”, Białystok, Poland</li>
+          <li><b>2019</b> — Szczecin, Poland</li>
+          <li><b>2019</b> — “Alternatywy 33”, Ostrów Wielkopolski, Poland</li>
         </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" aria-labelledby="contactTitle">
@@ -572,6 +590,7 @@ body {
     {id:"kyiv", title:"Kyiv. Stela", size:"40×60 cm", medium:"Acrylic on canvas", price:350, status:"sold", img:"img/8.jpg", tags:["city"]},
     {id:"paris", title:"Evening in Paris", size:"40×60 cm", medium:"Acrylic on canvas", price:350, status:"sold", img:"img/9.jpg", tags:["city"]},
     {id:"cny", title:"Chinese New Year", size:"50×70 cm", medium:"Acrylic on canvas", price:500, status:"sold", img:"img/10.jpg", tags:["abstract"]},
+    {id:"Lviv", title:"Lviv Opera House", size:"60×90 cm", medium:"Acrylic on canvas", price:600, status:"sold", img:"img/13.jpg", tags:["abstract"]},
 
   ];
 
@@ -667,6 +686,7 @@ body {
   
 </body>
 </html>
+
 
 
 
